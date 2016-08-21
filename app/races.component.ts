@@ -1,18 +1,23 @@
 import { Component } from '@angular/core';
 import { Race } from './race';
-import { RACES } from './mocks';
+import {RaceService} from './race.service';
+import { FORM_DIRECTIVES } from '@angular/forms';
 
 @Component({
   selector: 'my-races',
   templateUrl: 'app/races.component.html',
-  styleUrls:['app/races.component.css']
+  styleUrls:['app/races.component.css'],
+  directives: [FORM_DIRECTIVES]
 })
 export class RacesComponent {
   heading = "Ultra Racing Schedule"
   cash = 10000;
   races: Race[];
-  ngOnInit(){
-    this.races = RACES;
+
+  constructor(private raceService: RaceService){}
+
+  ngOnInit() {
+    this.races = this.raceService.getRaces();
   }
 
   totalCost() {
