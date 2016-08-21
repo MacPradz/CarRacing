@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { Race } from './race';
 import { RACES } from './mocks';
+import { FORM_DIRECTIVES } from '@angular/forms';
 
 @Component({
   selector: 'my-races',
   templateUrl: 'app/races.component.html',
-  styleUrls:['app/races.component.css']
+  styleUrls:['app/races.component.css'],
+  directives: [FORM_DIRECTIVES]
 })
 export class RacesComponent {
   heading = "Ultra Racing Schedule"
