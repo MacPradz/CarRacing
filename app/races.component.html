@@ -1,4 +1,6 @@
 <main class="container" role="main">
+<h2>Money for racing: <input type="text" class="cash" [value]="cash" (input)="cash=$event.target.value"></h2>
+<!-- <h2>Money for racing: <input type="text" class="cash" [(ngModel)] = "cash"></h2>  THIS SHOULD WORK--> 
 <h2>Cash left to enter races: <span>{{cashLeft() | currency:'USD':true}}</span> </h2>
 <ul>
   <li class="card" *ngFor="let race of races" [class.racing]="race.isRacing" >
