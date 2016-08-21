@@ -24,6 +24,9 @@ button {
 .racing{
   background-color: #57595D;
 }
+ul{
+	list-style: none;
+}
 li{
   margin: 20px;
 }
